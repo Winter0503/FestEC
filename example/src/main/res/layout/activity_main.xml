@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ExampleActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <com.joanzapata.iconify.widget.IconTextView
+        android:id="@+id/icon_text"
+        android:text="{fa-coffee}"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerInParent="true"/>
 
 </RelativeLayout>
