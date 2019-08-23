@@ -1,13 +1,16 @@
 package com.diabin.festec.example;
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 
-public class ExampleActivity extends AppCompatActivity {
+import com.diabin.latte.activitys.ProxyActivity;
+import com.diabin.latte.delegate.LatteDelegate;
+import com.diabin.latte.ec.launcher.LauncherDelegate;
+import com.diabin.latte.ec.launcher.LauncherScrollDelegate;
+
+public class ExampleActivity extends ProxyActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public LatteDelegate setRootDelegate() {
+        return new LauncherScrollDelegate();
     }
+
 }

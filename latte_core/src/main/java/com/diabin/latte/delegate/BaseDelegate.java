@@ -17,6 +17,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import com.diabin.latte.activitys.ProxyActivity;
+
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import me.yokeyword.fragmentation.ExtraTransaction;
 import me.yokeyword.fragmentation.ISupportFragment;
 import me.yokeyword.fragmentation.SupportFragmentDelegate;
@@ -28,6 +31,8 @@ import me.yokeyword.fragmentation.anim.FragmentAnimator;
  * escription :
  */
 public abstract class BaseDelegate extends Fragment implements ISupportFragment {
+
+    private Unbinder mUnbinder=null;
     private final SupportFragmentDelegate DELEGATE = new SupportFragmentDelegate(this);
     private View mRootView = null;
 
@@ -53,6 +58,9 @@ public abstract class BaseDelegate extends Fragment implements ISupportFragment 
             rootView = (View) setLayout();
         } else {
             throw new ClassCastException("type of setLayout() must be int or View!");
+        }
+        if(rootView !=null){
+            mUnbinder= ButterKnife.bind(this,rootView);
         }
         mRootView = rootView;
         onBindView(savedInstanceState, rootView);

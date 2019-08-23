@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.diabin.latte.app.Latte;
 import com.diabin.latte.ec.icon.FontEcModule;
+import com.diabin.latte.net.interceptors.DebugInterceptor;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 
 
@@ -20,7 +21,7 @@ public class ExampleApp extends Application {
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcModule())
                 .whithApiHost("https://127.0.0.1/")
-//                .withInterceptor(new DebugInterceptor("index",R.raw.test))
+                .withInterceptor(new DebugInterceptor("index",R.raw.test))
                 .configure();
 
     }
