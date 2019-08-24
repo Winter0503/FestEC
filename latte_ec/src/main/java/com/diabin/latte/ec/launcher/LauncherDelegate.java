@@ -10,6 +10,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.diabin.latte.delegate.LatteDelegate;
 import com.diabin.latte.ec.R;
 import com.diabin.latte.ec.R2;
+import com.diabin.latte.util.LattePreference;
 import com.diabin.latte.util.timer.BaseTimerTask;
 import com.diabin.latte.util.timer.ITimerListener;
 
@@ -40,7 +41,7 @@ public class LauncherDelegate extends LatteDelegate implements ITimerListener {
         if (mTimer != null) {
             mTimer.cancel();
             mTimer = null;
-//            checkIsShowScroll();
+            checkIsShowScroll();
         }
     }
 
@@ -71,11 +72,20 @@ public class LauncherDelegate extends LatteDelegate implements ITimerListener {
                         if (mTimer != null) {
                             mTimer.cancel();
                             mTimer = null;
-//                            checkIsShowScroll();
+                            checkIsShowScroll();
                         }
                     }
                 }
             }
         });
+    }
+
+    //是否展示滚动的启动项
+    private void checkIsShowScroll() {
+        if(!LattePreference.getAppFlag(ScrollLauncherTag.HAS_FIRST_LAUNCHER_APP.name())){
+            start(new LauncherScrollDelegate(),SINGLETASK);
+        }else{
+            //检查用户是否登录了App
+        }
     }
 }

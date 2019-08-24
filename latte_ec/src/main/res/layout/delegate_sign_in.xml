@@ -104,7 +104,6 @@
                 android:text="{fa-weixin}"
                 android:textColor="#04b00f"
                 android:textSize="40sp" />
-
-        </>
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.core.widget.NestedScrollView>
-</>
+</androidx.appcompat.widget.LinearLayoutCompat>

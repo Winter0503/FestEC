@@ -12,7 +12,7 @@ import com.diabin.latte.app.Latte;
  * Blog : https://mp.csdn.net/
  * escription :  SharedPreferences 的基本使用
  */
-public class LattePrefersnce {
+public class LattePreference {
 
     private static final SharedPreferences PREFERENCES =
             PreferenceManager.getDefaultSharedPreferences(Latte.getApplicationContext());
